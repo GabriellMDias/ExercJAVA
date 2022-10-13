@@ -10,14 +10,13 @@ classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como
 "Assassina". Caso contrário, ela será classificado como "Inocente".*/
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import static com.sun.tools.javac.util.StringUtils.toUpperCase;
 
 public class Perguntas {
-    public void main(String[] args){
-        System.out.println("Teste");
-
-        ArrayList<Boolean> respostas = new ArrayList<Boolean>();
+    public static void main(String[] args){
+        ArrayList<Boolean> respostas = new ArrayList<>();
 
         System.out.println("Telefonou para a vítima?");
         respostas.add(getResposta());
@@ -30,16 +29,28 @@ public class Perguntas {
         System.out.println("Já trabalhou com a vítima?");
         respostas.add(getResposta());
 
-        System.out.println(respostas);
+        Iterator<Boolean> iterator = respostas.iterator();
+
+        int soma = 0;
+        while (iterator.hasNext()){
+            boolean next = iterator.next();
+            if (next){
+                soma++;
+            }
+        }
+        System.out.println("Respostas Positivas: " + soma);
+
+        if (soma == 2){
+            System.out.println("Pessoa Suspeita");
+        }else if (soma > 2 && soma<=4){
+            System.out.println("Pessoa Cúmplice");
+        }else{
+            System.out.println("Assassina!");
+        }
     }
 
-    public boolean getResposta(){
+    public static boolean getResposta(){
         Scanner entrada = new Scanner(System.in);
-        if (entrada.nextLine().equals("SIM")){
-            entrada.close();
-            return true;
-        }
-        entrada.close();
-        return false;
+        return toUpperCase(entrada.nextLine()).equals("SIM");
     }
 }
