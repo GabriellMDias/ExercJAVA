@@ -1,4 +1,4 @@
-/*Dadas as seguintes informações sobre minhas séries favoritas,
+package set;/*Dadas as seguintes informações sobre minhas séries favoritas,
 crie um conjunto e ordene este conjunto exibindo:
 (nome - genero - tempo de episódio);
 Série 1 = Nome: got, genero: fantasia, tempoEpisodio: 60

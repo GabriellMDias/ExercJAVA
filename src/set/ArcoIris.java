@@ -1,4 +1,4 @@
-/*Crie um conjunto contendo as cores do arco-íris e:
+package set;/*Crie um conjunto contendo as cores do arco-íris e:
         1-Exiba todas as cores uma abaixo da outra
         2-A quantidade de cores que o arco-íris tem
         3-Exiba as cores em ordem alfabética
